@@ -14,13 +14,15 @@
 | toolnode_example.py | ToolNode-style agent (create_react_agent with tools) |
 | react_agent_example.py | ReAct agent, handles verbose/exit |
 | two_hour_agent_project.py | Multi-tool agent: calculator, count_letter, current_time |
+| educational_analyzer_agent.py | 2-hour project: YouTube educational video analyzer (transcript tools) |
 | README.md | This file |
 
 ## Terminal output (logs)
 
 - `log_toolnode_example.txt` – ToolNode example run
 - `log_react_agent_example.txt` – ReAct agent example run
-- `log_two_hour_agent_project.txt` – 2-hour agent project run
+- `log_two_hour_agent_project.txt` – 2-hour agent (calculator, time) run
+- `log_educational_analyzer_agent.txt` – Educational analyzer run (video analysis)
 
 From repo root: `py -3 run_all_logs.py --topic 4`
 
@@ -51,18 +53,15 @@ ReAct forces a strict **reason → act → reason** cycle: one LLM call, then on
 
 In those cases you’d build a **custom graph** with your own nodes and edges (and optionally use ToolNode only for the “execute these tool calls” node) instead of using the single prebuilt ReAct agent.
 
-## 2-Hour Agent Project
+## 2-Hour Agent Projects
 
-**two_hour_agent_project.py** implements a minimal multi-tool agent with:
+**two_hour_agent_project.py** – Minimal multi-tool agent with calculator, count_letter, and current_time. Uses `create_react_agent`; type **verbose** or **exit** as in the examples.
 
-- **calculator** – math expressions (including sqrt, sin, cos, pi)
-- **count_letter** – count occurrences of a letter in text
-- **current_time** – current date/time
-
-It uses `create_react_agent`, and handles **verbose** and **exit** in the same way as the examples. Run with `OPENAI_API_KEY` set:
+**educational_analyzer_agent.py** – Separate 2-hour project: YouTube Educational Video Analyzer. Uses ReAct agent with tools to fetch YouTube transcripts (plain or timestamped). Features: summary with bullet points and key quotes; extract chapter timestamps; answer questions about the video; compare multiple videos. Requires `OPENAI_API_KEY` and `pip install youtube-transcript-api`.
 
 ```bash
 python two_hour_agent_project.py
+python educational_analyzer_agent.py   # Enter YouTube URL or ID, then use menu (1–4)
 ```
 
 ## Running the examples

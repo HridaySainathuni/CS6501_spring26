@@ -108,12 +108,13 @@ def main():
                     run_cmd(cmd, cwd=d, log_path=log, timeout=120)
 
         elif topic == "4":
-            # Topic 4: interactive - one query then exit
+            # Topic 4: interactive - one query then exit; educational analyzer: video ID then quit
             d = os.path.join(REPO_ROOT, "Topic4Exploring")
             for script, stdin in [
                 ("toolnode_example.py", "What is 15 + 27?\nexit"),
                 ("react_agent_example.py", "What is 15 + 27?\nexit"),
                 ("two_hour_agent_project.py", "What time is it?\nexit"),
+                ("educational_analyzer_agent.py", "dQw4w9WgXcQ\n4\n"),
             ]:
                 path = os.path.join(d, script)
                 if not os.path.isfile(path):
@@ -123,7 +124,8 @@ def main():
                 if args.dry_run:
                     print("[T4] %s < stdin > %s" % (cmd, log))
                 else:
-                    run_cmd(cmd, cwd=d, stdin_text=stdin, log_path=log, timeout=120)
+                    timeout = 240 if "educational_analyzer" in script else 120
+                    run_cmd(cmd, cwd=d, stdin_text=stdin, log_path=log, timeout=timeout)
 
         elif topic == "5":
             # Topic 5: RAG - non-interactive

@@ -1,0 +1,65 @@
+Educational Video Analyzer
+Enter a YouTube URL or video ID to analyze.
+Video URL or ID: 
+Generating transcript, summary, key quotes, concepts, and quiz questions...
+
+## Summary
+- The song is about unwavering commitment and loyalty in love.
+- It emphasizes mutual understanding and communication in a relationship.
+- The lyrics convey reassurance and a promise of support.
+- The repetition of "never gonna give you up" highlights dedication.
+- It touches on feelings of shyness and hesitation in expressing emotions.
+- The song has a playful tone, inviting the listener to engage in the 'game' of love.
+
+## Key Quotes
+- "Never gonna give you up."
+- "Your heart's been aching but you're too shy to say it."
+- "I just wanna tell you how I'm feeling."
+- "We know the game and we're gonna play it."
+- "Gotta make you understand."
+
+## Key Concepts
+- Commitment in relationships.
+- The importance of communication and honesty.
+- Emotions related to love, such as shyness and longing.
+- The playful nature of romantic relationships.
+
+## Quiz Questions
+1. **What is the main theme of the song?**
+   - A) Betrayal
+   - B) Commitment in love (Correct answer)
+   - C) Friendship
+   - D) Adventure
+
+2. **Which line emphasizes loyalty in the relationship?**
+   - A) "Never gonna run around and desert you." (Correct answer)
+   - B) "We've known each other for so long."
+   - C) "Your heart's been aching."
+   - D) "Gotta make you understand."
+
+3. **What feeling does the lyric "Your heart's been aching but you're too shy to say it" express?**
+   - A) Anger
+   - B) Sadness
+   - C) Hesitation in expressing emotions (Correct answer)
+   - D) Happiness
+
+4. **True or False: The phrase "never gonna give you up" is repeated throughout the song.**
+   - True (Correct answer)
+   - False
+
+5. **What do the lyrics suggest about understanding in a relationship?**
+   - A) It's irrelevant.
+   - B) It's crucial for a healthy relationship. (Correct answer)
+   - C) It leads to misunderstandings.
+   - D) It's not important.
+
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+What would you like to do next?
+  1. Ask a question about this video
+  2. Generate chapter timestamps for this video
+  3. Compare this video with other video(s)
+  4. Quit
+Choose 1ΓÇô4: Goodbye.
+
+C:\Users\Sai\Downloads\CS6501\Topic4Exploring\educational_analyzer_agent.py:134: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  agent = create_agent(llm, [get_youtube_transcript, get_youtube_transcript_timestamped])
