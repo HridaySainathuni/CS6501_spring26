@@ -1,9 +1,14 @@
-"""Task 2: Handle empty input with 3-way conditional
-Modify the code so that an empty input is never passed to the LLM. 
-Instead of adding a loop that ignores empty input, get into the spirit of LangChain 
-and modify the input_node get_user_input node and router function so there is a 
-3-way conditional branch out of get_user_input node, with one edge going back to itself.
-"""
+"""Task 2: Handle empty input with 3-way conditional."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

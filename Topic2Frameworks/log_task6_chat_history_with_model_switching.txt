@@ -1,0 +1,20 @@
+==================================================
+LangGraph - Task 6: Chat History with Model Switching
+==================================================
+
+Human, Llama, and Qwen in one history (name prefixes in messages).
+
+Enter your text (or 'quit' to exit):
+--------------------------------------------------
+Llama Response:
+--------------------------------------------------
+There is no one best flavor; vanilla is the most popular worldwide.
+
+Enter your text (or 'quit' to exit):
+--------------------------------------------------
+Qwen Response:
+--------------------------------------------------
+Chocolate is the best! It's rich and versatile.
+
+Enter your text (or 'quit' to exit):
+Goodbye.

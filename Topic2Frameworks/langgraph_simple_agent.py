@@ -1,16 +1,14 @@
-"""langgraph_simple_agent.py
-Program demonstrates use of LangGraph for a very simple agent.
-It writes to stdout and asks the user to enter a line of text through stdin.
-It passes the line to the LLM llama-3.2-1B-Instruct, then prints the
-what the LLM returns as text to stdout.
-The LLM should use Cuda if available, if not then if mps is available then use that,
-otherwise use cpu.
-After the LangGraph graph is created but before it executes, the program
-uses the Mermaid library to write a image of the graph to the file lg_graph.png
-The program gets the LLM llama-3.2-1B-Instruct from Hugging Face and wraps
-it for LangChain using HuggingFacePipeline.
-The code is commented in detail so a reader can understand each step.
-"""
+"""langgraph_simple_agent.py - Simple LangGraph agent with Llama 3.2-1B."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

@@ -1,8 +1,14 @@
-"""Task 7: Checkpointing and Crash Recovery
-Modify the multi-agent chat program so that you can kill it in the middle of 
-conversation and restart it with nothing lost. Uses LangGraph checkpointing 
-and recovery features.
-"""
+"""Task 7: Checkpointing and Crash Recovery."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

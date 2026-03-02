@@ -1,0 +1,19 @@
+==================================================
+LangGraph Simple Agent - Task 1: Verbose/Quiet Tracing
+==================================================
+
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+Graph created successfully!
+Saving graph visualization... Graph image saved to task1_graph.png
+
+Enter your text (or 'quit' to exit, 'verbose' for tracing, 'quiet' to disable):
+[TRACE] Entering route_after_input function
+[TRACE] Routing to call_llm
+
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+2 + 2 equals 4.
+
+Enter your text (or 'quit' to exit, 'verbose' for tracing, 'quiet' to disable):
+Goodbye.

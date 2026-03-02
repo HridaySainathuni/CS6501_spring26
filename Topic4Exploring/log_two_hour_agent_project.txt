@@ -1,0 +1,7 @@
+2-Hour Agent: calculator, count_letter, current_time. Type 'exit' to quit.
+You: Agent: What time is it?
+Agent: {"current_time": "2026-03-01T22:03:43.786590"}
+Agent: The current time is 22:03:43 on March 1, 2026.
+You: 
+C:\Users\Sai\Downloads\CS6501\Topic4Exploring\two_hour_agent_project.py:46: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  agent = create_react_agent(llm, TOOLS)

@@ -1,8 +1,14 @@
-"""Task 6: Chat history with model switching
-Integrate the chat history with the ability to switch between Llama and Qwen.
-Handle the three entities (human, Llama, Qwen) using the Message API by adding
-names to messages and using appropriate roles.
-"""
+"""Task 6: Chat history with model switching."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

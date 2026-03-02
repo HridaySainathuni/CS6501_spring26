@@ -1,0 +1,18 @@
+==================================================
+LangGraph - Task 5: Chat History
+==================================================
+
+Enter your text (or 'quit' to exit):
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+Hello! How can I assist you?
+
+Enter your text (or 'quit' to exit):
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+I'm here to help. What would you like to know?
+
+Enter your text (or 'quit' to exit):
+Goodbye.

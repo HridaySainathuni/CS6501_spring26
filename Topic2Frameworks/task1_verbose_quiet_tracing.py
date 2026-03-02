@@ -1,8 +1,14 @@
-"""Task 1: Add verbose/quiet tracing
-Modify the code so that if the input is the word "verbose" then each node 
-prints tracing information to stdout, and if the input is "quiet" the tracing 
-information is not printed.
-"""
+"""Task 1: Add verbose/quiet tracing."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

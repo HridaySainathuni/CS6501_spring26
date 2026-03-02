@@ -10,15 +10,7 @@ This directory contains the code, graphs, and analysis for the "Running an LLM" 
 - `verify_setup.py` - Environment setup verification
 
 ### Documentation
-- `VERIFICATION_CHECKLIST.md` - Complete checklist of implemented features
-- `ANALYSIS.md` - Analysis and discussion of results
-
-### Graphs (PDF format)
-- `accuracy_by_subject.pdf` - Accuracy comparison across subjects
-- `overall_accuracy.pdf` - Overall model performance
-- `timing_comparison.pdf` - Performance timing analysis
-- `error_analysis.pdf` - Error pattern analysis
-- `accuracy_heatmap.pdf` - Visual heatmap of results
+- `ANALYSIS.md` - Analysis and discussion of results (questions from the tasks)
 
 ## Quick Start
 
@@ -27,21 +19,23 @@ This directory contains the code, graphs, and analysis for the "Running an LLM" 
 3. Run evaluation: `python llama_mmlu_eval.py --use-gpu`
 4. Run chat agent: `python chat_agent.py`
 
-## Important: Getting Complete Graphs
+## Running the evaluation
 
-**Current graphs show only 2 subjects** because the existing JSON file has partial results.
-
-To get **complete graphs with all 10 subjects**, run:
-
+**Quick verification (2 subjects):**
 ```bash
-# Quick: 1 model on all 10 subjects (30-60 min)
-python llama_mmlu_eval.py --use-gpu --models llama-3.2-1b
-
-# Full: All 3 models on all 10 subjects (2-3 hours)
-python llama_mmlu_eval.py --use-gpu
+python llama_mmlu_eval.py --max-subjects 2
 ```
 
-See `HOW_TO_GET_COMPLETE_GRAPHS.md` for detailed instructions.
+**Full run (all 10 MMLU subjects, 3 models):**
+```bash
+# GPU recommended
+python llama_mmlu_eval.py --use-gpu
+
+# With verbose (print each question, model answer, right/wrong)
+python llama_mmlu_eval.py --use-gpu --verbose
+```
+
+Graphs (accuracy, timing) are generated from the evaluation results. Run from this directory; output JSON and plots appear in the current folder.
 
 ## Features Implemented
 
@@ -54,5 +48,5 @@ See `HOW_TO_GET_COMPLETE_GRAPHS.md` for detailed instructions.
 ✅ History toggle option  
 ✅ Restartability with pickle  
 
-See `VERIFICATION_CHECKLIST.md` for complete details.
+Chat agent supports context management, history toggle, and restartability (pickle).
 

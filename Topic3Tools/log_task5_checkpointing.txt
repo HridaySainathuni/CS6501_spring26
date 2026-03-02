@@ -1,0 +1,5 @@
+Final messages: 4
+Content: What is sin(0) + sqrt(4)? Use the calculator.
+Content: {"result": 2.0}
+Content: The result of \( \sin(0) + \sqrt{4} \) is \( 2.0 \).
+Conversation with checkpointing ready. Restart with same thread_id to resume.

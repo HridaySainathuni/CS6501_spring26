@@ -1,0 +1,2 @@
+﻿Query: How many s in Mississippi?
+Response: There are 4 's' letters in "Mississippi."

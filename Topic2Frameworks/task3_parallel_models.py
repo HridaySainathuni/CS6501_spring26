@@ -1,9 +1,14 @@
-"""Task 3: Parallel Qwen and Llama models
-Modify the code so that the output edge from get_user_input that continues on 
-the LLM instead goes to a node that simply passes the input onto both a node 
-for Llama and a node for your choice of Qwen model. The models should run in parallel. 
-The node that accepts the inputs from both models should print out both results.
-"""
+"""Task 3: Parallel Qwen and Llama models."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

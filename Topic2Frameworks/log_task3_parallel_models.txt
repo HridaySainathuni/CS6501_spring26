@@ -1,0 +1,20 @@
+==================================================
+LangGraph - Task 3: Parallel Models
+==================================================
+
+Loading Llama and Qwen...
+Graph created. Input is sent to both models in parallel.
+
+Enter your text (or 'quit' to exit):
+--------------------------------------------------
+Llama Response:
+--------------------------------------------------
+Machine learning is a subset of AI that enables systems to learn from data.
+
+--------------------------------------------------
+Qwen Response:
+--------------------------------------------------
+Machine learning allows computers to learn patterns from data without being explicitly programmed.
+
+Enter your text (or 'quit' to exit):
+Goodbye.

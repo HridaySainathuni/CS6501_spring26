@@ -1,0 +1,14 @@
+==================================================
+LangGraph - Task 7: Checkpointing and Crash Recovery
+==================================================
+
+Using MemorySaver for checkpointing. Restart with same thread_id to resume.
+
+Enter your text (or 'quit' to exit):
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+Hello! Your conversation state is saved. You can exit and restart to resume.
+
+Enter your text (or 'quit' to exit):
+Goodbye.

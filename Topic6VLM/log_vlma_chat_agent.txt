@@ -1,0 +1,7 @@
+Vision-language chat. Describe or ask about the image. Type 'quit' to exit.
+You: Describe this image.
+Assistant: The image shows a gray, neutral background—likely a simple placeholder or test image with no distinct objects or scene. It could be used for testing the vision model.
+You: What colors do you see?
+Assistant: Mostly shades of gray and neutral tones. There are no strong or vivid colors in the image.
+You: quit
+Goodbye.

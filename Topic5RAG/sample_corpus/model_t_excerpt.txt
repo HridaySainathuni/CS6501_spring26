@@ -1,0 +1,7 @@
+Model T Ford Service Manual (excerpt for testing RAG)
+
+Carburetor adjustment: To adjust the carburetor on a Model T, first ensure the engine is at operating temperature. Turn the mixture screw clockwise until the engine runs rough, then counter-clockwise one full turn. The correct spark plug gap for a Model T Ford is 0.030 inches. Use a feeler gauge to set the gap.
+
+Transmission band: If the transmission band is slipping, check the linkage adjustment. Tighten the band adjustment nut located on the left side of the transmission. Do not overtighten; the band should engage smoothly. What oil should you use in a Model T engine? Use a high-quality SAE 20 or 30 weight oil. In cold weather use the lighter grade.
+
+Maintenance: Check oil level weekly. Clean the spark plugs every 500 miles. The cooling system should be flushed annually. Brake adjustment is critical for safety; adjust when the pedal travels more than two inches before engagement.

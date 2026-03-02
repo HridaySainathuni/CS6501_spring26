@@ -1,8 +1,14 @@
-"""Task 4: Conditional model routing
-Modify the code so that instead of running both models in parallel, only one 
-of them is run. If the user's input begins with the words "Hey Qwen", then it 
-should go to Qwen, otherwise to Llama.
-"""
+"""Task 4: Conditional model routing."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

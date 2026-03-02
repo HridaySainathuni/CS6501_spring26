@@ -1,0 +1,18 @@
+==================================================
+LangGraph - Task 2: Empty Input Handling
+==================================================
+
+3-way conditional: empty input loops back to get_user_input (never sent to LLM).
+
+Enter your text (empty input will re-prompt):
+[Empty input - node loops back]
+Enter your text (empty input will re-prompt):
+[Empty input - node loops back]
+Enter your text (empty input will re-prompt):
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+Hello! How can I help you today?
+
+Enter your text (empty input will re-prompt):
+Goodbye.

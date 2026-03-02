@@ -1,0 +1,6 @@
+Saved toolnode_graph.png
+Enter query (or 'verbose' / 'exit'): Assistant: What is 15 + 27?
+Assistant: 15 + 27 equals 42.
+
+C:\Users\Sai\Downloads\CS6501\Topic4Exploring\toolnode_example.py:34: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  agent = create_react_agent(llm, TOOLS)

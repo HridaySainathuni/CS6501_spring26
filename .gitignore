@@ -13,10 +13,16 @@ results/
 *.pkl
 *.json
 !requirements.txt
+!secrets.json.example
+secrets.json
 .DS_Store
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+# Optional large sample video (use your own for Topic 6)
+Topic6VLM/*.mov
+Topic6VLM/*.mp4
+Topic6VLM/*.avi
 

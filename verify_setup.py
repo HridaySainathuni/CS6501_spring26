@@ -1,6 +1,14 @@
 """Setup Verification Script"""
-
+import os
 import sys
+_root = os.path.dirname(os.path.abspath(__file__))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 import subprocess
 import io
 
@@ -22,8 +30,15 @@ def check_package(package_name, import_name=None):
 
 def check_huggingface_auth():
     try:
-        from huggingface_hub import HfFolder
-        token = HfFolder.get_token()
+        # Prefer env (HF_TOKEN or HUGGING_FACE_HUB_TOKEN), then get_token() (huggingface_hub >= 0.20)
+        token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")
+        if not token:
+            try:
+                from huggingface_hub import get_token
+                token = get_token()
+            except ImportError:
+                from huggingface_hub import HfFolder
+                token = HfFolder.get_token()
         if token:
             print("[OK] Hugging Face is authenticated")
             return True

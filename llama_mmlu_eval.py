@@ -1,7 +1,15 @@
 """Multi-Model MMLU Evaluation Script"""
-
+import os
 import sys
 import io
+_root = os.path.dirname(os.path.abspath(__file__))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -337,7 +345,8 @@ def evaluate_subject(model, tokenizer, model_key, subject, device, verbose=False
     }
 
 
-def evaluate_model(model_key, device, quantization_bits, verbose=False):
+def evaluate_model(model_key, device, quantization_bits, verbose=False, subjects=None):
+    subjects = subjects or MMLU_SUBJECTS
     model_info = MODELS[model_key]
     print(f"\n{'='*70}")
     print(f"Evaluating Model: {model_info['display_name']}")
@@ -352,8 +361,8 @@ def evaluate_model(model_key, device, quantization_bits, verbose=False):
     total_correct = 0
     total_questions = 0
     
-    for i, subject in enumerate(MMLU_SUBJECTS, 1):
-        print(f"\nProgress: {i}/{len(MMLU_SUBJECTS)} subjects")
+    for i, subject in enumerate(subjects, 1):
+        print(f"\nProgress: {i}/{len(subjects)} subjects")
         subject_timer = TimingTracker(device).start()
         
         result = evaluate_subject(model, tokenizer, model_key, subject, device, verbose)
@@ -549,6 +558,8 @@ def main():
     parser.add_argument('--models', nargs='+', choices=list(MODELS.keys()),
                         default=list(MODELS.keys()),
                         help='Models to evaluate (default: all)')
+    parser.add_argument('--max-subjects', type=int, default=None,
+                        help='Max number of MMLU subjects (e.g. 2 for quick verification, default: all 10)')
     
     args = parser.parse_args()
     
@@ -568,10 +579,15 @@ def main():
     device = detect_device(use_gpu)
     in_colab, quantization_bits = check_environment(device, quantization_bits)
     
+    subjects_to_run = MMLU_SUBJECTS
+    if args.max_subjects is not None:
+        subjects_to_run = MMLU_SUBJECTS[: args.max_subjects]
+        print(f"Running on {len(subjects_to_run)} subject(s) for verification: {subjects_to_run}\n")
+    
     all_results = []
     for model_key in args.models:
         try:
-            result = evaluate_model(model_key, device, quantization_bits, args.verbose)
+            result = evaluate_model(model_key, device, quantization_bits, args.verbose, subjects=subjects_to_run)
             all_results.append(result)
         except Exception as e:
             print(f"\n[FAIL] Error evaluating {MODELS[model_key]['display_name']}: {e}")

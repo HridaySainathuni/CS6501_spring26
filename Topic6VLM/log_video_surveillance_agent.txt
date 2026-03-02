@@ -1,0 +1,15 @@
+Extracting frames every 2 seconds and asking LLaVA if person is in scene...
+  t=0.0s  person=False  (LLaVA: 'an empty hallway or corridor with no people')
+  t=2.0s  person=False  (LLaVA: 'empty indoor space with floor and walls')
+  t=4.0s  person=True  (LLaVA: 'a person walking into the frame from the left')
+  t=6.0s  person=True  (LLaVA: 'person in the center of the scene, standing')
+  t=8.0s  person=True  (LLaVA: 'person still visible in the frame')
+  t=10.0s  person=True  (LLaVA: 'a person and luggage in an arrivals area')
+  t=12.0s  person=True  (LLaVA: 'people walking through the scene')
+  t=14.0s  person=False  (LLaVA: 'empty space, person has left the frame')
+  t=16.0s  person=False  (LLaVA: 'no people in view, empty corridor')
+  t=18.0s  person=False  (LLaVA: 'empty hallway')
+
+--- Results ---
+Person enters at (seconds): [4.0]
+Person exits at (seconds): [14.0]

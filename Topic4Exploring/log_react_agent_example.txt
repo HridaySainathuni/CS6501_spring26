@@ -1,0 +1,7 @@
+Saved react_agent_graph.png
+You (verbose/exit to quit): Assistant: What is 15 + 27?
+Assistant: 15 + 27 equals 42.
+You (verbose/exit to quit): Goodbye.
+
+C:\Users\Sai\Downloads\CS6501\Topic4Exploring\react_agent_example.py:33: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  agent = create_react_agent(llm, TOOLS)

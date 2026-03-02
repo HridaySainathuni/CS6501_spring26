@@ -1,8 +1,14 @@
-"""Task 5: Chat history with Message API
-Modify the code so that it maintains a chat history context using the Message API.
-The roles supported by the API are system, human (or user), ai (or assistant), and tool (or function).
-Disable the ability to use Qwen and test your code to make sure that it is working.
-"""
+"""Task 5: Chat history with Message API."""
+import os
+import sys
+_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+try:
+    from load_secrets import load_secrets
+    load_secrets()
+except Exception:
+    pass
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

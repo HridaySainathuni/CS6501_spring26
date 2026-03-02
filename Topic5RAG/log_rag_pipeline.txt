@@ -1,0 +1,5 @@
+
+usage: rag_pipeline.py [-h] [--corpus CORPUS] [--chunk-size CHUNK_SIZE]
+                       [--overlap OVERLAP] [--top-k TOP_K] [--query QUERY]
+                       [--no-llm] [--prompt PROMPT]
+rag_pipeline.py: error: unrecognized arguments: is the correct spark plug gap for a Model T?'

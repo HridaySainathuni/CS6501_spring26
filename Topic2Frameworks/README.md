@@ -220,16 +220,21 @@ Each task generates a graph visualization:
 - `task6_graph.png` - Task 6 multi-model with history
 - `task7_graph.png` - Task 7 with checkpointing
 
-## Terminal Output Files
+## Terminal Output Files (Logs)
 
 Terminal session outputs are saved as:
-- `task1_output.txt` - Task 1 terminal output
-- `task2_output.txt` - Task 2 terminal output (including empty input tests)
-- `task3_output.txt` - Task 3 parallel execution output
-- `task4_output.txt` - Task 4 conditional routing output
-- `task5_output.txt` - Task 5 chat history output
-- `task6_output.txt` - Task 6 multi-model conversation output
-- `task7_output.txt` - Task 7 checkpointing test output
+- `log_langgraph_simple_agent.txt` – Base agent run
+- `log_task1_verbose_quiet_tracing.txt` – Task 1 (verbose/quiet)
+- `log_task2_empty_input_handling.txt` – Task 2 empty input behavior
+- `task2_empty_input_observations.txt` – Notes on empty input behavior
+- `log_task3_parallel_models.txt` – Task 3 parallel Llama + Qwen
+- `log_task4_conditional_model_routing.txt` – Task 4 conditional routing
+- `log_task5_chat_history.txt` – Task 5 chat history
+- `log_task6_chat_history_with_model_switching.txt` – Task 6 model switching
+- `task6_conversation_example.txt` – Example multi-model conversation
+- `log_task7_checkpointing_crash_recovery.txt` – Task 7 checkpointing
+
+Generate fresh logs from repo root: `py -3 run_all_logs.py --topic 2`
 
 ## Notes
 
